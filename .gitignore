@@ -1,5 +1,7 @@
 *.xml
+blog/migrations/*
 *.pyc
+*.sqlite3
 */*/*.pyc
 */.pyc
 *.pyc
