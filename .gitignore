@@ -1,2 +1,6 @@
 *.xml
+*.pyc
+*/*/*.pyc
+*/.pyc
+*.pyc
 idea/*
