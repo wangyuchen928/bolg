@@ -11,7 +11,7 @@ class Post(models.Model):
     # 帖子的标题
     title = models.CharField(max_length=250)
     # 用于url 作为一个简短的标记
-    slug = models.SlugField(max_length=250, unique_for_date='published')
+    slug = models.SlugField(max_length=250, unique_for_date='publish')
     # 一个外键 一个用户可以拥有多个帖子 （多对一）
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_query_name="blog_posts")
     # 贴子的主体
