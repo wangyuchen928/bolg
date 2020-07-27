@@ -6,3 +6,5 @@ blog/migrations/*
 */.pyc
 *.pyc
 .idea/*
+mysite/__pycache__/*.pyc
+
