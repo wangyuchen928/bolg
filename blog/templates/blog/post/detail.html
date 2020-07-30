@@ -10,6 +10,16 @@
     <hr>
     {{ post.body | linebreaks }}
     <hr>
+    <h2> 相似帖子</h2>
+    {% for post in similar_posts %}
+    <p>
+        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+    </p>
+        {% empty %}
+        目前还没有类似的帖子
+    {% endfor %}
+
+    <hr>
     {% with  comments.count as total_comments %}
         {% if comments.count > 0 %}
             <h2>
