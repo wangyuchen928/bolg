@@ -7,6 +7,29 @@
     <p class="date">
         Published{{ post.publish }} by {{ post.author }}
     </p>
+    <hr>
     {{ post.body | linebreaks }}
+    <hr>
+    {% with  comments.count as total_comments %}
+        {% if comments.count > 0 %}
+            <h2>
+                有{{ total_comments }}条评论
+            </h2>
+        {% else %}
+        {% endif %}
+    {% endwith %}
+    {% for comment in comments %}
+        <div class="comment">
+            <p class="info">
+                '{{ comment.body|safe }}' by {{ comment.name }}
+                {{ comment.created }}
+            </p>
+            {{ comments.body|linebreaks }}
+        </div>
+    {% empty %}
+        <p>暂无评论.....</p>
+    {% endfor %}
+
+
     <p><a href="{% url 'blog:post_share' post.id %}"> ----分享这个帖子---- </a></p>
 {% endblock %}
